@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Prototipo::Application.config.secret_key_base = 'da16678d17931f1c9a089c0328308efea014eb4a6dbcd6fc1d4b4514e29ff835fe033f48427f46c176464e8f271dfd8cdcd6f9f4c4a3ca157ae2d1a721f4c9af'
+Prototipo::Application.config.secret_key_base = '59b74c0f5776d6b4538f9770f8a49c289c14a78805048a5e42d2423b6e336eaf7d1e7b4614ba7362109e30266fc9ae6a5484001896ebd06bed47a5efe1916659'
