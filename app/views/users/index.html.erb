@@ -1,0 +1,38 @@
+<div id="contenido">
+	<div id="titulo">
+		Usuarios registrados
+	</div>
+	
+	<h2>Crear nuevo</h2>
+	<%= link_to "Nuevo usuario", new_user_path %>
+	
+	<hr />
+	
+	<h2>Posts creados</h2>
+	<table class="lista">
+	  <tr>
+	    <th class="etiqueta">Nombre</th>
+	    <th class="etiqueta">Rol</th>
+	    <th class="etiqueta">Contraseña</th>
+	    <th></th>
+	  </tr>
+	 
+	  <% @users.each do |user| %>
+	    <tr>
+	      <td><%= user.name %></td>
+	      <td><%= user.role %></td>
+	      <td>123456</td>
+	      <td>
+	      	  <%= link_to "Eliminar", user_path(user), method: :delete,
+	      			data: { confirm: '¿Seguro que desea eliminar el usuario?' } %>
+	      </td>
+	    </tr>
+	  <% end %>
+	</table>
+	
+	<hr />
+	
+	<a href="/">Ir al inicio</a>
+	
+</div>
+

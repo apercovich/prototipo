@@ -11,3 +11,68 @@
  *= require_self
  *= require_tree .
  */
+
+/* ************************************************************************ */
+/* 			Objetos HTML 													*/
+/* ************************************************************************ */
+h1 {
+	font-size: 16px;
+	margin-bottom: 30px;
+}
+
+h2 {
+	font-size: 13px;
+	margin-bottom: 20px;
+}
+
+input {
+	font-size: 12px;
+}
+
+input[type="submit"] {
+	float: right;
+}
+
+
+
+/* ************************************************************************ */
+/* 			Estructura de la plantilla										*/
+/* ************************************************************************ */
+
+#todo {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin: 0 auto;
+	width: 800px;
+}
+
+#cabezal {
+	height: 200px;
+	background: url("banner.png");
+}
+
+#pie {
+	height: 30px;
+	background-color: #00A425;
+}
+
+#cuerpo {
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+#contenido {}
+
+
+
+/* ************************************************************************ */
+/* 			Clases utiles 													*/
+/* ************************************************************************ */
+
+.centrado {
+	text-align: center;
+}
+.centrado table {
+	margin: 0 auto;
+	text-align: left;
+}

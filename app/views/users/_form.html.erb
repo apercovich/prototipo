@@ -1,0 +1,46 @@
+<%= form_for @user do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error">
+      <%= pluralize(@user.errors.count, "error") %>:
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+  <table>
+  	<tr>
+  		<td>Nombre</td>
+  		<td><%= f.text_field :name %></td>
+  	</tr>
+  	<tr>
+  		<td>Correo electrónico</td>
+  		<td><%= f.text_field :email %></td>
+  	</tr>
+  	<tr>
+  		<td>Contraseña</td>
+  		<td><%= f.password_field :password %></td>
+  	</tr>
+  	<tr>
+  		<td>Repetir contraseña</td>
+  		<td><%= f.password_field :password_confirmation %></td>
+  	</tr>
+  	<tr>
+  		<td>Rol</td>
+  		<td>
+  			<%= f.select :role, ["Administrador", "Editor", "Observador"] %>
+  		</td>
+  	</tr>
+  	<tr>
+  		<td colspan="2">&nbsp;</td>
+  	</tr>
+  	<tr>
+  		<td colspan="2"><%= f.submit %></td>
+  	</tr>
+  </table>
+
+<% end %>

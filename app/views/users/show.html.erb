@@ -1,0 +1,23 @@
+<div class="centrado">
+	<h1>Datos del usuario</h1>
+	
+	<table>
+  	<tr>
+  		<td class="etiquetaCampo">Nombre</td>
+  		<td><%= @user.name %></td>
+  	</tr>
+  	<tr>
+  		<td class="etiquetaCampo">Rol</td>
+  		<td><%= @user.role %></td>
+  	</tr>
+  	<tr>
+  		<td class="etiquetaCampo">Contraseña</td>
+  		<td>123456</td>
+  	</tr>
+  </table>
+	
+	<br />
+	
+	<%= link_to "Volver al inicio", controller: "welcome", action: "index" %>
+
+</div>
