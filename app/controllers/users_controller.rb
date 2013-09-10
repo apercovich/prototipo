@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   #Guardar el objeto
   def create
     @user = User.new(user_signup_params())
-    @user.active = false;
-    @user.enabled = false;
+    @user.role = UserRole.find(params[:user][:role_id]);
+    @user.state = UserState.find(UserState::ID_REGISTRADO);
     
     if @user.save()
       redirect_to @user

@@ -32,7 +32,7 @@
   	<tr>
   		<td>Rol</td>
   		<td>
-  			<%= f.select :role, ["Administrador", "Editor", "Observador"] %>
+  			<%= collection_select(:user, :role_id, UserRole.all(), :id, :name) %>
   		</td>
   	</tr>
   	<tr>
