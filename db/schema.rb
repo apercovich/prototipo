@@ -11,19 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130908235032) do
+ActiveRecord::Schema.define(version: 20130910030950) do
 
   create_table "logs", force: true do |t|
     t.datetime "date"
     t.string   "action"
     t.text     "description"
-    t.integer  "record_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "task_id"
   end
 
-  add_index "logs", ["record_id"], name: "index_logs_on_record_id", using: :btree
+  add_index "logs", ["task_id"], name: "index_logs_on_task_id", using: :btree
   add_index "logs", ["user_id"], name: "index_logs_on_user_id", using: :btree
 
   create_table "records", force: true do |t|
@@ -52,15 +52,41 @@ ActiveRecord::Schema.define(version: 20130908235032) do
   add_index "routes", ["previous_id"], name: "index_routes_on_previous_id", using: :btree
   add_index "routes", ["user_id"], name: "index_routes_on_user_id", using: :btree
 
+  create_table "tasks", force: true do |t|
+    t.date     "date"
+    t.time     "time_start"
+    t.time     "time_end"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
+
+  create_table "user_roles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_states", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "role"
-    t.boolean  "active"
-    t.boolean  "enabled"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_id"
+    t.integer  "state_id"
   end
+
+  add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
+  add_index "users", ["state_id"], name: "index_users_on_state_id", using: :btree
 
 end

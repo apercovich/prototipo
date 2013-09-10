@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   has_many :routes
   has_many :records, dependent: :destroy
   
+  belongs_to :role, class_name: "UserRole"
+  belongs_to :state, class_name: "UserState"
+  
+  
   #Controles para el registro (http://ruby.railstutorial.org/chapters/modeling-users)
   before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }
