@@ -1,28 +1,30 @@
 
 <div class="centrado">
 	
-	<h1>Bienvenido al Sistema de Registro de Horas</h1>
-	<h2>Para acceder a la aplicación debe iniciar sesión</h2>
+	<h1>Sistema de Registro de Horas</h1>
+	<h2>Esta pagina permite mostrar cosas diferentes para usuarios logueados o no</h2>
 	
-	<table>
-		<tr>
-			<td>Nombre de usuario</td>
-			<td><input type="text" /></td>
-		</tr>
-		<tr>
-			<td>Contraseña</td>
-			<td><input type="text" /></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="submit" value="Ingresar!" /></td>
-		</tr>
-		<tr>
-			<td colspan="2">&nbsp;</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<%= link_to "Registrarse", "users/new", method: :get %>
-			</td>
-		</tr>
-	</table>
+	<div style="margin-top: 30px;">
+		<% if signed_in? %>
+		
+		  <h2>Usuario logueado</h2>
+		  
+		  <%= link_to "Usuarios", '#' %> <br />
+			<%= link_to "Configuracion", '#' %> <br />
+			<%= link_to "Perfil", current_user %> <br />
+			
+			<br />
+			 
+		  <%= link_to "Cerrar sesión", signout_path, method: "delete" %>
+		  
+		<% else %>
+		
+		  <h2>Usuario NO logueado</h2>
+		  
+		  <%= link_to "Iniciar sesión", signin_path, method: "get" %>
+		  
+		<% end %>
+	</div>
+	
+	
 </div>

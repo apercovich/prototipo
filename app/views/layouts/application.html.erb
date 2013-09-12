@@ -13,6 +13,14 @@
 	<div id="cabezal"></div>
 	
 	<div id="cuerpo">
+		<% if flash.any? %>
+			<div id="mensajesFlash">
+				<% flash.each do |key, value| %>
+	        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+	      <% end %>
+			</div>
+		<% end %>
+      
 		<div id="contenido">
 			<%= yield %>
 		</div>
