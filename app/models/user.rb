@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :routes
-  has_many :records, dependent: :destroy
+  has_many :tasks, dependent: :destroy
   
   belongs_to :role, class_name: "UserRole"
   belongs_to :state, class_name: "UserState"

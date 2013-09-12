@@ -1,0 +1,28 @@
+<%= form_for @task do |t| %>
+
+  <table>
+  	<tr>
+  		<td>Fecha</td>
+  		<td><%= t.date_field :date %></td>
+  	</tr>
+  	<tr>
+  		<td>Hora de inicio</td>
+  		<td><%= t.time_field :time_start %></td>
+  	</tr>
+  	<tr>
+  		<td>Hora de inicio</td>
+  		<td><%= t.time_field :time_end %></td>
+  	</tr>
+  	<tr>
+  		<td>Descripcion</td>
+  		<td><%= t.text_area :description %></td>
+  	</tr>
+  	<tr>
+  		<td colspan="2">&nbsp;</td>
+  	</tr>
+  	<tr>
+  		<td colspan="2"><%= t.submit %></td>
+  	</tr>
+  </table>
+  
+<% end%>
