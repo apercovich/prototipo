@@ -12,7 +12,11 @@ class UsersController < ApplicationController
     @user.state = UserState.find(UserState::ID_REGISTRADO);
     
     if @user.save()
+      # Inicio sesion automaticamente
+      sign_in(@user)
+      flash[:success] = "Sesión iniciada correctamente!!!"
       redirect_to @user
+      
     else
       render "new"
     end

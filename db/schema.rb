@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130910030950) do
+ActiveRecord::Schema.define(version: 20130911230247) do
 
   create_table "logs", force: true do |t|
     t.datetime "date"
@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20130910030950) do
 
   add_index "logs", ["task_id"], name: "index_logs_on_task_id", using: :btree
   add_index "logs", ["user_id"], name: "index_logs_on_user_id", using: :btree
+
+  create_table "records", force: true do |t|
+    t.date     "date"
+    t.time     "time_start"
+    t.time     "time_end"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "records", ["user_id"], name: "index_records_on_user_id", using: :btree
 
   create_table "routes", force: true do |t|
     t.string   "pageName"
@@ -72,8 +84,11 @@ ActiveRecord::Schema.define(version: 20130910030950) do
     t.datetime "updated_at"
     t.integer  "role_id"
     t.integer  "state_id"
+    t.string   "remember_token"
   end
 
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
   add_index "users", ["role_id"], name: "index_users_on_role_id", using: :btree
   add_index "users", ["state_id"], name: "index_users_on_state_id", using: :btree
 
