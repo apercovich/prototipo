@@ -1,24 +1,24 @@
 
 <div class="centrado">
 	
-	<h1>Bienvenido al Sistema de Registro de Horas</h1>
-	<h2>Para acceder a la aplicación debe iniciar sesión</h2>
+	<div class="page-header">
+		<p >Bienvenido al Sistema de Registro de Horas</p>		
+	</div>
+	<h2 class="form-signin-heading">Iniciar sesión</h2>
 	
 	
 	<%= form_for(:session, url: sessions_path) do |f| %>
-  
+  	
 		<table>
-			<tr>
-				<td>Nombre de usuario</td>
-				<td><%= f.text_field :name %></td>
+			<tr>						
+				<td><%= f.text_field :name, class:"form-control", :autofocus=>true, :placeholder=>"Nombre de Usuario" %></td>
 			</tr>
 			<tr>
-				<td>Contraseña</td>
-				<td><%= f.password_field :password %></td>
+				<td><%= f.password_field :password, class:"form-control", :placeholder=>"Contraseña"%></td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<%= f.submit "Ingresar!" %>
+					<%= f.submit "Ingresar!", class: "btn btn-primary btn-block" %>
 				</td>
 			</tr>
 			<tr>
