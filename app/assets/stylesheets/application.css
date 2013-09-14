@@ -65,6 +65,7 @@ a:hover {
 }
 
 #cuerpo {
+	float: left;
 	background-color: #eeeeee;
 	padding-top: 20px;
 	padding-bottom: 50px;
@@ -98,7 +99,6 @@ a:hover {
 #mensajesFlash {
 	margin: 20px auto 30px auto;
 	padding: 10px 15px 10px 15px;
-	background-color: #FEFABD;
 	font-weight: bold;
 }
 
