@@ -2,19 +2,33 @@
 		<div id="menu">
 			<ul>
 				<li class="tituloMenu">Registro de tareas</li>
-				<li class="implem"><%= link_to "Lista de tareas", '#' %></li>
-				<li class="implem"><%= link_to "Ver estadísticas", '#' %></li>
+				<li class="implem"><%= link_to "Listar tareas", '#' %></li>
+				
+				<% if can? :update, Task %>
+					<li class="implem"><%= link_to "Crear/modificar tarea", '#' %></li>
+				<% end %>
+				
+				<% if can? :delete, Task %>
+					<li class="implem"><%= link_to "Eliminar tarea", '#' %></li>
+				<% end %>
+				
+				<% if can? :read_stats, Log %>
+					<li class="implem"><%= link_to "Ver estadísticas", '#' %></li>
+				<% end %>
 			</ul>
 			<ul>
 				<li class="tituloMenu">Administración de cuenta</li>
-				<li><%= link_to "Ver perfil", current_user %></li>
+				<li><%= link_to "Ver/modificar perfil", current_user %></li>
 				<li class="implem"><%= link_to "Cambiar contraseña", '#' %></li>
 			</ul>
-			<ul>
-				<li class="tituloMenu">Administración de usuarios</li>
-				<li class="implem"><%= link_to "Aprobaciones pendientes", '#' %></li>
-				<li class="implem"><%= link_to "Lista de usuarios", '#' %></li>
-			</ul>
+			
+			<% if can? :update, User %>
+				<ul>
+					<li class="tituloMenu">Administración de usuarios</li>
+					<li class="implem"><%= link_to "Listar usuarios", '#' %></li>
+					<li class="implem"><%= link_to "Modificar usuario", '#' %></li>
+				</ul>
+			<% end %>
 			
 			<br />
 			

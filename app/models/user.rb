@@ -24,6 +24,18 @@ class User < ActiveRecord::Base
   
   
   
+  # Defino el manejo de roles
+  # ID_ADMIN = 1
+  # ID_EDITOR = 2
+  # ID_OBSERVADOR = 3
+  ROLES = %w[admin editor observador]
+
+  def role?(base_role)
+    ROLES.index(base_role.to_s) + 1 >= role.id # Creanme que funciona :D
+  end
+  
+  
+  
   # Defino los procedimientos necesarios para generar y guardar el token asociado a la sesion del usuario
   # Las operaciones definidas como User.xxx son estaticas, no necesitan una instancia
   def User.new_remember_token

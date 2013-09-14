@@ -26,6 +26,18 @@ ActiveRecord::Schema.define(version: 20130911230247) do
   add_index "logs", ["task_id"], name: "index_logs_on_task_id", using: :btree
   add_index "logs", ["user_id"], name: "index_logs_on_user_id", using: :btree
 
+  create_table "records", force: true do |t|
+    t.date     "date"
+    t.time     "time_start"
+    t.time     "time_end"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "records", ["user_id"], name: "index_records_on_user_id", using: :btree
+
   create_table "routes", force: true do |t|
     t.string   "pageName"
     t.datetime "date"
