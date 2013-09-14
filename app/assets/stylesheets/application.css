@@ -15,6 +15,7 @@
 /* ************************************************************************ */
 /* 			Objetos HTML 																												*/
 /* ************************************************************************ */
+
 h1 {
 	font-size: 16px;
 	margin-bottom: 30px;
@@ -64,6 +65,7 @@ a:hover {
 }
 
 #cuerpo {
+	background-color: #eeeeee;
 	padding-top: 20px;
 	padding-bottom: 50px;
 }
