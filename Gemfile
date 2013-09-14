@@ -47,4 +47,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # CanCan, para manejar roles
 gem 'cancan'
 
-gem 'edición_paralela'
+
