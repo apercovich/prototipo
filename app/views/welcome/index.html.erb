@@ -7,10 +7,10 @@
 	<div style="margin-top: 30px;">
 		<% if signed_in? %>
 		
-		  <h2>Usuario logueado</h2>
+		  <h2>Usuario logueado: <%= current_user.name %></h2>
 		  
-		  <%= link_to "Usuarios", '#' %> <br />
-			<%= link_to "Configuracion", '#' %> <br />
+		  <%= link_to "Usuarios (falta implementar)", '#' %> <br />
+			<%= link_to "Configuracion (falta implementar)", '#' %> <br />
 			<%= link_to "Perfil", current_user %> <br />
 			
 			<br />

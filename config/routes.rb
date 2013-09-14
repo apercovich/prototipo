@@ -3,15 +3,20 @@ Prototipo::Application.routes.draw do
   root "sessions#new"
   
   resources :users;
+  resources :tasks;
   resources :sessions, only: [:new, :create, :destroy]
 
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
   
-  # Para debug
-  match '/prueba',  to: 'welcome#index',        via: 'get'
-  resources :tasks;
+  # Rutas para paginas estaticas
+  get "pages/main"
+  
+  # Rutas definidas a mano
+  match '/prueba',      to: 'welcome#index',    via: 'get'
+  match '/principal',   to: 'pages#main',       via: 'get'
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

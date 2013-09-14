@@ -33,6 +33,12 @@ input[type="submit"] {
 	float: right;
 }
 
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
 
 
 /* ************************************************************************ */
@@ -54,6 +60,7 @@ input[type="submit"] {
 #pie {
 	height: 30px;
 	background-color: #00A425;
+	clear: both;
 }
 
 #cuerpo {
@@ -61,19 +68,37 @@ input[type="submit"] {
 	padding-bottom: 50px;
 }
 
-#contenido {}
+#menu {
+	float: left;
+	width: 200px;
+}
+#menu ul {
+	list-style: none;
+	padding-left: 10px;
+}
+#menu li.tituloMenu {
+	margin-left: -10px;
+	font-size: 13px;
+}
 
-#mensajesFlash {
-	margin: 20px auto 30px auto;
-	padding: 10px 15px 10px 15px;
-	background-color: #E7E2FF;
-	font-weight: bold;
+#contenido {
+	float: left;
+	width: 600px;
+	min-height: 400px;
+	background-color: #E9F2E9;
 }
 
 
 /* ************************************************************************ */
-/* 			Clases utiles 																											*/
+/* 			Estilos utiles																											*/
 /* ************************************************************************ */
+
+#mensajesFlash {
+	margin: 20px auto 30px auto;
+	padding: 10px 15px 10px 15px;
+	background-color: #FEFABD;
+	font-weight: bold;
+}
 
 .centrado {
 	text-align: center;
@@ -82,3 +107,9 @@ input[type="submit"] {
 	margin: 0 auto;
 	text-align: left;
 }
+
+li.implem a {
+	text-decoration: line-through;
+	color: #EC4343;
+}
+

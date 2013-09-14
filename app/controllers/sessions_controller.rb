@@ -39,7 +39,7 @@ class SessionsController < ApplicationController
       # Inicio la sesion del usuario y lo redirijo a la pagina principal
       sign_in(user)
       flash[:success] = "Sesión iniciada correctamente!!!"
-      redirect_to user #Esto va a show.html, falta la pagina principal
+      redirect_to "/principal"
       
     else
       # Creo un mensaje de error y re-renderizo el formulario de inicio de sesion.

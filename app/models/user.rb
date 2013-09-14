@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   before_save { self.email = email.downcase }
   
   # Esta llamada invoca una operacion antes de crear el objeto, que luego se guardara en la BD
-  before_create :create_remember_token
+  # before_create :create_remember_token
   
   # Controles para el registro (http://ruby.railstutorial.org/chapters/modeling-users)
   validates :name, presence: true, length: { maximum: 50 }

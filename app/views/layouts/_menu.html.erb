@@ -1,0 +1,25 @@
+	<% if signed_in? %>
+		<div id="menu">
+			<ul>
+				<li class="tituloMenu">Registro de tareas</li>
+				<li class="implem"><%= link_to "Lista de tareas", '#' %></li>
+				<li class="implem"><%= link_to "Ver estadísticas", '#' %></li>
+			</ul>
+			<ul>
+				<li class="tituloMenu">Administración de cuenta</li>
+				<li><%= link_to "Ver perfil", current_user %></li>
+				<li class="implem"><%= link_to "Cambiar contraseña", '#' %></li>
+			</ul>
+			<ul>
+				<li class="tituloMenu">Administración de usuarios</li>
+				<li class="implem"><%= link_to "Aprobaciones pendientes", '#' %></li>
+				<li class="implem"><%= link_to "Lista de usuarios", '#' %></li>
+			</ul>
+			
+			<br />
+			
+			<%= link_to "Cerrar sesión", signout_path, method: "delete" %>
+		</div>
+		
+	<% else %>
+	<% end %>
