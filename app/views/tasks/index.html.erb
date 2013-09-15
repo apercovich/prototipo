@@ -1,2 +1,30 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<div class="centrado">
+	<h1>Tareas del usuario <%= current_user.name%></h1>
+	
+	
+	
+  <table class="lista">
+    <tr>
+	    <th class="etiqueta">Id</th>
+	    <th class="etiqueta">Fecha</th>
+	    <th class="etiqueta">Hora inicio</th>
+	    <th class="etiqueta">Hora fin</th>
+	    <th class="etiqueta">Descripcion</th>
+	    <th></th>
+	</tr>
+	 <% @tasks.each do |tarea| %>	
+  	<tr>
+  		<td><%= tarea.id %></td>
+  		<td><%= tarea.date %></td>
+  		<td><%= tarea.time_start %></td>
+  		<td><%= tarea.time_end %></td>
+  		<td><%= tarea.description %></td>
+  		<td><%= link_to "Modificar", edit_task_path(tarea) %></td>
+  		<td><%= link_to "Eliminar", tarea, :method => :delete %></td>
+  	</tr>
+  <% end %>
+  </table>
+  
+  <%= link_to "Volver al inicio", controller: "welcome", action: "index" %>
+
+</div>

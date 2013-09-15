@@ -2,10 +2,10 @@
 		<div id="menu">
 			<ul>
 				<li class="tituloMenu">Registro de tareas</li>
-				<li class="implem"><%= link_to "Listar tareas", '#' %></li>
+				<li><%= link_to "Listar tareas", tasks_path %></li>
 				
 				<% if can? :update, Task %>
-					<li class="implem"><%= link_to "Crear/modificar tarea", '#' %></li>
+					<li><%= link_to "Crear/modificar tarea", new_task_path %></li>
 				<% end %>
 				
 				<% if can? :delete, Task %>

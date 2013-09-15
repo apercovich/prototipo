@@ -1,2 +1,23 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<div class="centrado">
+	<h1>Mostrar tarea</h1>
+	
+	<table>
+  	<tr>
+  		<td class="etiquetaCampo">Fecha</td>
+  		<td><%= @task.date %></td>
+  	</tr>
+  	<tr>
+  		<td class="etiquetaCampo">Hora de inicio</td>
+  		<td><%= @task.time_start %></td>
+  	</tr>
+  	<tr>
+  		<td class="etiquetaCampo">Hora de fin</td>
+  		<td><%= @task.time_end %></td></td>
+  	</tr>
+  	<tr>
+  		<td class="etiquetaCampo">Descripcion</td>
+  		<td><%= @task.description %></td></td>
+  	</tr>
+  </table>
+
+</div>

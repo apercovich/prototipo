@@ -1,8 +1,8 @@
 <div class="centrado">
 	
-	<h1>Crear nueva tarea</h1>
+	<h1>Crear nueva tarea para el usuario <%= current_user.name %></h1>
 	
-	<%= render 'formCreate' %>
+	<%= render 'form' %>
 	
 	<%= link_to "Volver al inicio", controller: "welcome", action: "index" %>
 </div>
