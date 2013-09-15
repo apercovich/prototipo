@@ -5,11 +5,7 @@
 				<li><%= link_to "Listar tareas", tasks_path %></li>
 				
 				<% if can? :update, Task %>
-					<li><%= link_to "Crear/modificar tarea", new_task_path %></li>
-				<% end %>
-				
-				<% if can? :delete, Task %>
-					<li class="implem"><%= link_to "Eliminar tarea", '#' %></li>
+					<li><%= link_to "Crear tarea", new_task_path %></li>
 				<% end %>
 				
 				<% if can? :read_stats, Log %>

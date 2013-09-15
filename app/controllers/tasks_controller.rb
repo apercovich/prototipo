@@ -1,37 +1,42 @@
 class TasksController < ApplicationController
-   
+  
+  #Para no repetir codigo en los siguientes metodos 
+  before_filter :obtener_usuario, :only => [:create, :show, :index, :edit, :update, :destroy]
+  
+  #Agregada
+  def obtener_usuario
+    @usuario = User.find(current_user.id)
+  end
+ 
   def new
     @task = Task.new();
   end
 
   def create
-    u = User.find(current_user.id)
-    u.tasks.create(parametros())
-    
-    flash[:success] = "Tarea ingresada correctamente!!!"
-    redirect_to tasks_path
+    @usuario.tasks.create(parametros())
+    if ! @usuario.errors
+      flash[:success] = "Tarea ingresada correctamente!!!"
+      redirect_to tasks_path
+    else
+      flash[:success] = "Error al crear tarea"
+      redirect_to tasks_path
+    end
   end
 
   def show
-    u = User.find(current_user.id)
-    @task = u.tasks.find(params[:id])
+    @task = @usuario.tasks.find(params[:id])
   end
 
-  #Muestro todas las tareas de un usuario
   def index
-    u = User.find(current_user.id)
-    @tasks = u.tasks.all()
+    @tasks = @usuario.tasks.all()
   end
 
   def edit
-    u = User.find(current_user.id)
-    @task = u.tasks.find(params[:id])
+    @task = @usuario.tasks.find(params[:id])
   end
 
   def update
-    u = User.find(current_user.id)
-    @task = u.tasks.find(params[:id])
-    
+    @task = @usuario.tasks.find(params[:id])
     if @task.update(parametros())
       flash[:success] = "Tarea actualizada correctamente!!!"
       redirect_to tasks_path
@@ -39,8 +44,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    u = User.find(current_user.id)
-    u.tasks.find(params[:id]).destroy
+    @usuario.tasks.find(params[:id]).destroy
     flash[:success] = "Tarea eliminada correctamente!!!"
     redirect_to tasks_path
   end
