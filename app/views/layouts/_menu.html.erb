@@ -2,7 +2,7 @@
 		<div id="menu">
 			<ul>
 				<li class="tituloMenu">Registro de tareas</li>
-				<li><%= link_to "Listar tareas", tasks_path %></li>
+				
 				
 				<% if can? :update, Task %>
 					<li><%= link_to "Crear tarea", new_task_path %></li>
@@ -14,21 +14,20 @@
 			</ul>
 			<ul>
 				<li class="tituloMenu">Administración de cuenta</li>
-				<li><%= link_to "Ver/modificar perfil", current_user %></li>
 				<li class="implem"><%= link_to "Cambiar contraseña", '#' %></li>
 			</ul>
 			
 			<% if can? :update, User %>
 				<ul>
 					<li class="tituloMenu">Administración de usuarios</li>
-					<li><%= link_to "Listar usuarios", users_path %></li>
+					<li class="implem"><%= link_to "Listar usuarios", '#' %></li>
 					<li class="implem"><%= link_to "Modificar usuario", '#' %></li>
 				</ul>
 			<% end %>
 			
 			<br />
 			
-			<%= link_to "Cerrar sesión", signout_path, method: "delete" %>
+			
 		</div>
 		
 	<% else %>
