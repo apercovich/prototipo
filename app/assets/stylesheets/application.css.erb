@@ -16,6 +16,11 @@
 /* 			Objetos HTML 																												*/
 /* ************************************************************************ */
 
+body{
+	width: 100%;
+	height:100%;
+}
+
 h1 {
 	font-size: 16px;
 	margin-bottom: 30px;
@@ -49,15 +54,43 @@ a:hover {
 #todo {
 	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	margin: 0 auto;
-	width: 800px;
+
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 0%;
+
+
+	width: 80%;
+	height: 100%;
 }
 
-#cabezal {
-	height: 250px;
-	background: url(<%= asset_path "banner3.png" %>) no-repeat bottom;
-	background-color: #00A425;
+
+@media all and (min-width: 691px) {
+	#cabezal {
+		width: 100%;
+		height: 250px;
+		background: url(<%= asset_path "banner3.png" %>) no-repeat bottom;
+		background-color: #A4CDC5;
+		background-size:100% 100%;
+	}
 }
+@media all and (max-width: 690px) and (min-width: 1px) {
+
+
+	#cabezal {
+		width: 100%;
+		height: 125px;
+		/*background: url("banner3.png") no-repeat bottom;*/
+		background-color: #A4CDC5;
+		background-size:100% 100%;
+	}
+
+}
+
+#cabezal{
+	margin-bottom: 0px;
+}
+
 
 #pie {
 	height: 30px;
@@ -69,15 +102,21 @@ a:hover {
 	width: 100%;
 	float: left;
 	background-color: #eeeeee;
-	padding-top: 20px;
-	padding-bottom: 50px;
+
+
+	margin-top: 0%;
+}
+
+.barraMenu{
+	margin-top: 0%;
 }
 
 #menu {
+	margin-top: 0%;
 	float: left;
 	width: 200px;
 }
-#menu ul {
+#menu u80.5{
 	list-style: none;
 	padding-left: 10px;
 }
@@ -87,10 +126,11 @@ a:hover {
 }
 
 #contenido {
+	margin-top: 0%;
 	float: left;
-	width: 600px;
+	width: 80.5%;
 	min-height: 400px;
-	background-color: #E9F2E9;
+	background-color: inherit;
 }
 
 
