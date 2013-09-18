@@ -39,12 +39,12 @@ class SessionsController < ApplicationController
       # Inicio la sesion del usuario y lo redirijo a la pagina principal
       sign_in(user)
       flash[:success] = "Sesión iniciada correctamente!!!"
-      redirect_to "/principal"
+      redirect_to "/main"
       
     else
       # Creo un mensaje de error y re-renderizo el formulario de inicio de sesion.
       flash.now[:error] = 'El nombre de usuario o la contraseña es incorrecto'
-      render 'new'
+      render "new"
     end
   end
   

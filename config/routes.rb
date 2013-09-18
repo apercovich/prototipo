@@ -1,21 +1,25 @@
 Prototipo::Application.routes.draw do
   
+  # Raiz
   root "sessions#new"
   
+  # Rutas RESTful
   resources :users;
   resources :tasks;
   resources :sessions, only: [:new, :create, :destroy]
-
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
   
-  # Rutas para paginas estaticas
+  # Rutas no RESTful
   get "pages/main"
   
-  # Rutas definidas a mano
-  match '/prueba',      to: 'welcome#index',    via: 'get'
-  match '/principal',   to: 'pages#main',       via: 'get'
+  # Redirecciones
+  match "/signup",            to: "users#new",                    via: "get"
+  match "/signin",            to: "sessions#new",                 via: "get"
+  match "/signout",           to: "sessions#destroy",             via: "delete"
+  
+  match "/main",              to: "pages#main",                   via: "get"
+  
+  match "/resetPassword",     to: "users#pageResetPassword",      via: "get"
+  match "/resetPassword",     to: "users#confirmResetPassword",   via: "post"
   
   
   # The priority is based upon order of creation: first created -> highest priority.

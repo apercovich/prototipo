@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
+encoding//app/views/users/_form.html.erb=UTF-8
+encoding//app/views/users/show.html.erb=UTF-8
 encoding//config/routes.rb=UTF-8
 encoding//db/migrate/20130910030950_remove_active_enabled_role_from_users.rb=UTF-8
 encoding/Gemfile=UTF-8
