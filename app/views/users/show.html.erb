@@ -7,19 +7,25 @@
   		<td><%= @user.name %></td>
   	</tr>
   	<tr>
-  		<td class="etiquetaCampo">Rol</td>
-  		<td><%= @user.role.name %></td>
+  		<td class="etiquetaCampo">Email</td>
+  		<td><%= @user.email%></td>
   	</tr>
   	<tr>
-  		<td class="etiquetaCampo">Contraseña</td>
-  		<td>123456</td>
+  		<td class="etiquetaCampo">Rol</td>
+  		<td><%= @user.role.name%></td>
   	</tr>
+    <tr>
+      <td class="etiquetaCampo">Estado</td>
+      <td><%= @user.state.name%></td>
+    </tr>
   </table>
 	
 	<br />
 	<%= link_to "Probar sesión iniciada", prueba_path %>
 	
 	<br />
+  <%= link_to "Volver a usuarios", users_path %>
+  <br />
 	<%= link_to "Volver al inicio", root_url %>
 
 </div>

@@ -21,25 +21,27 @@
   		<td>Correo electrónico</td>
   		<td><%= f.text_field :email, class:"form-control", :placeholder=>"Email" %></td>
   	</tr>
-  	<tr>
-  		<td>Contraseña</td>
-  		<td><%= f.password_field :password , class:"form-control", :placeholder=>"Contraseña"%></td>
-  	</tr>
-  	<tr>
-  		<td>Repetir contraseña</td>
-  		<td><%= f.password_field :password_confirmation , class:"form-control", :placeholder=>"Confirme contraseña"%></td>
-  	</tr>
-  	<tr>
-  		<td>Rol</td>
-  		<td>
-  			<%= collection_select(:user, :role_id, UserRole.all(), :id, :name) %>
-  		</td>
-  	</tr>
+    <% if params[:action] == 'new' %>
+    	<tr>
+    		<td>Contraseña</td>
+    		<td><%= f.password_field :password , class:"form-control", :placeholder=>"Contraseña"%></td>
+    	</tr>
+    	<tr>
+    		<td>Repetir contraseña</td>
+    		<td><%= f.password_field :password_confirmation , class:"form-control", :placeholder=>"Confirme contraseña"%></td>
+    	</tr>
+    	<tr>
+    		<td>Rol</td>
+    		<td>
+    			<%= collection_select(:user, :role_id, UserRole.all(), :id, :name, {:selected => :role_id}) %>
+    		</td>
+    	</tr>
+    <% end %> 
   	<tr>
   		<td colspan="2">&nbsp;</td>
   	</tr>
   	<tr>
-  		<td colspan="2"><%= f.submit "Ingresar", class: "btn btn-block btn-primary"%></td>
+  		<td colspan="2"><%= f.submit "Enviar", class: "btn btn-block btn-primary"%></td>
   	</tr>
   </table>
 

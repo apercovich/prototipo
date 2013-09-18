@@ -19,8 +19,9 @@
   		<td><%= tarea.time_start %></td>
   		<td><%= tarea.time_end %></td>
   		<td><%= tarea.description %></td>
+      <td><%= link_to "Ver", task_path(tarea) %></td>
   		<td><%= link_to "Modificar", edit_task_path(tarea) %></td>
-  		<td><%= link_to "Eliminar", tarea, :method => :delete %></td>
+  		<td><%= link_to "Eliminar", tarea, :method => :delete , data: { confirm: '¿Seguro que desea eliminar la tarea?' }%></td>
   	</tr>
   <% end %>
   </table>

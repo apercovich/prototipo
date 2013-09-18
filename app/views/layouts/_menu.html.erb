@@ -21,7 +21,7 @@
 			<% if can? :update, User %>
 				<ul>
 					<li class="tituloMenu">Administración de usuarios</li>
-					<li class="implem"><%= link_to "Listar usuarios", '#' %></li>
+					<li><%= link_to "Listar usuarios", users_path %></li>
 					<li class="implem"><%= link_to "Modificar usuario", '#' %></li>
 				</ul>
 			<% end %>
