@@ -14,13 +14,13 @@ class User < ActiveRecord::Base
   # before_create :create_remember_token
   
   # Controles para el registro (http://ruby.railstutorial.org/chapters/modeling-users)
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: { presence: true, message: "El nombre no puede ser vacío"} , length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence:   true,
-                    format:     { with: VALID_EMAIL_REGEX },
+  validates :email, presence:   { presence: true, message: "El email no puede ser vacío"},
+                    format:     { with: VALID_EMAIL_REGEX , message: "El formato del email no es correcto"},
                     uniqueness: { case_sensitive: false }
   has_secure_password
-  validates :password, length: { minimum: 6 }, :on => :create
+  validates :password, length: { minimum: 6, message: "La contraseña debe tener al menos 6 caracteres" }, :on => :create
   
   
   
