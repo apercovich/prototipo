@@ -7,10 +7,11 @@
 	<%= link_to "Nuevo usuario", new_user_path %>
 	
 	<h2>Usuarios creados</h2>
-	<table class="lista">
+	<table class="table table-bordered table-hover table-condensed">
 	  <tr>
 	    <th class="etiqueta">Nombre</th>
 	    <th class="etiqueta">Email</th>
+	    <th colspan="3" class="etiqueta centrado">Acciones</th>
 	  </tr>
 	 
 	  <% @users.each do |user| %>

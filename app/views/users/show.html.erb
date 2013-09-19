@@ -1,7 +1,7 @@
 <div class="centrado">
 	<h1>Datos del usuario</h1>
 	
-	<table>
+	<table class="table table-bordered table-hover table-condensed">
   	<tr>
   		<td class="etiquetaCampo">Nombre</td>
   		<td><%= @user.name %></td>
@@ -21,9 +21,18 @@
   </table>
 	
 	<br />
-  <%= link_to "Volver a usuarios", users_path %>
-	
-	<br />
-	<%= link_to "Volver al inicio", main_url %>
+
+  <div class="bs-docs-example">
+      <ul class="nav nav-pills">
+          <li>
+              <%= link_to "Volver a usuarios", users_path %>
+          </li>
+          <li>
+              <%= link_to "Volver al inicio", main_url %>
+          </li>
+      </ul>
+  </div>
+
+  
 
 </div>
