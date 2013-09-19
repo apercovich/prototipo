@@ -47,6 +47,9 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # CanCan, para manejar roles
 gem 'cancan'
 
+# Manejo de la parte visual
+gem 'bootstrap' 
+
 
 ######################################################
 #  Configuración para Heroku                         #
