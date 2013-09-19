@@ -52,10 +52,10 @@ gem 'cancan'
 #  Configuración para Heroku                         #
 ######################################################
 # Para que se guarden bien los logs
-# gem 'rails_12factor', group: :production
+gem 'rails_12factor', group: :production
 
 # Usar PostgreSQL como motor de bases de datos
-# gem 'pg'
+gem 'pg'
 
 # Indicar la versión de Ruby para evitar errores
-# ruby '2.0.0'
+ruby '2.0.0'
