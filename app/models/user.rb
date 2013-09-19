@@ -7,18 +7,23 @@ class User < ActiveRecord::Base
   
   
   # Esta llamada invoca una operacion antes de guardar el objeto en la BD.
-  # Se usa para asegurar la unicidad del correo a nivel de base de datos.
-  before_save { self.email = email.downcase }
+  # Se usa para asegurar la unicidad del correo y el nombre a nivel de base de datos,
+  # cambiándolos a minúsculas.
+  before_save :downcaseAttributes
   
   # Esta llamada invoca una operacion antes de crear el objeto, que luego se guardara en la BD
   # before_create :create_remember_token
   
   # Controles para el registro (http://ruby.railstutorial.org/chapters/modeling-users)
-  validates :name, presence: { presence: true, message: "El nombre no puede ser vacío"} , length: { maximum: 50 }
+  validates :name,  presence: { presence: true, message: "El nombre no puede ser vacío"},
+                    length: { maximum: 50 },
+                    uniqueness: { case_sensitive: false }
+                    
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence:   { presence: true, message: "El email no puede ser vacío"},
                     format:     { with: VALID_EMAIL_REGEX , message: "El formato del email no es correcto"},
                     uniqueness: { case_sensitive: false }
+                    
   has_secure_password
   validates :password, length: { minimum: 6, message: "La contraseña debe tener al menos 6 caracteres" }, :on => :create
   
@@ -53,6 +58,13 @@ class User < ActiveRecord::Base
     # Crea el token asociado al usuario para iniciar automaticamente su sesion
     def create_remember_token
       self.remember_token = User.encrypt(User.new_remember_token())
+    end
+    
+  private
+    # Crea el token asociado al usuario para iniciar automaticamente su sesion
+    def downcaseAttributes
+      self.name = name.downcase
+      self.email = email.downcase
     end
     
     

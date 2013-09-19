@@ -14,6 +14,9 @@ class UsersController < ApplicationController
     if @user.save()
       # Inicio sesion automaticamente
       sign_in(@user)
+      
+      Mailsender.newUser(@user).deliver()
+      
       flash[:success] = "Sesión iniciada correctamente!!!"
       redirect_to @user
       
@@ -73,7 +76,7 @@ class UsersController < ApplicationController
         flash.now[:error] = "Ocurrió un error al guardar la nueva contraseña"
         render "resetPassword"
       else
-        Mailsender.resetPassword(@user, newPassword).deliver()
+        Mailsender.resetPassword(@user).deliver()
         
         flash[:success] = "Se envió un correo con la nueva contraseña: " + newPassword
         redirect_to root_url

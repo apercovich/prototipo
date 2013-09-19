@@ -9,17 +9,17 @@
   	<br/>
   	<br/>
   	
-    <h1>Nueva contraseña para el usuario <%= @user.name %></h1>
+    <h1>Nuevo usuario</h1>
     
     <p>
-      Se ha generado una nueva contraseña para su usuario.
+      Se ha creado un usuario asociado a esta dirección de correo.
       <br/>
-      Si usted no solicitó la generación, por favor comuníquese con el administrador.
+      Si recibió este mensaje por error, simplemente ignórelo.
       <br/>
       <br/>
-      Para acceder a su cuenta, debe hacerlo utilizando su nombre de usuario y la nueva contraseña:
+      Para acceder a su cuenta, debe hacerlo utilizando la contraseña elegida al registrarse y el nombre de usuario:
       <br/>
-      <h2><%= @user.password %></h2>
+      <h2><%= @user.name %></h2>
       <br/>
     </p>
     <p>

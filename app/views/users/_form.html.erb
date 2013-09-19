@@ -21,7 +21,7 @@
   		<td>Correo electrónico</td>
   		<td><%= f.text_field :email, class:"form-control", :placeholder=>"Correo electrónico" %></td>
   	</tr>
-    <% if params[:action] == 'new' %>
+    <% if params[:action] != "edit" %>
     	<tr>
     		<td>Contraseña</td>
     		<td><%= f.password_field :password , class:"form-control", :placeholder=>"Contraseña"%></td>

@@ -4,28 +4,38 @@
 #
 
 class Mailsender < ActionMailer::Base
+  default from: "fing.pis.2013@gmail.com"
   
-  def loadConfiguration
-    ActionMailer::Base.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => "gmail.com",
-      :user_name            => "rr.ricci",
-      :from                 => "rr.ricci@gmail.com",
-      :password             => "contrasenia",
-      :authentication       => "plain",
-      :enable_starttls_auto => true
-    }
+  URL  = "http://pis-prototipo-2013.herokuapp.com/"
+  
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => "587",
+    :authentication       => "plain",
+    :user_name            => "fing.pis.2013",
+    :password             => "pis123456",
+    :domain               => "gmail.com",
+    :enable_starttls_auto => true
+  }
+  
+  
+  def resetPassword(user)
+    @user = user
+    @url  = URL
+    mail(to: @user.email, subject: "WIRA - Nueva contraseña")
   end
   
-  def resetPassword(user, password)
-    loadConfiguration()
-    
+  def newUser(user)
     @user = user
-    @password = password
-    @url  = "http://pis-prototipo-2013.herokuapp.com/"
-    
-    mail(to: "rr.ricci@gmail.com", subject: "WIRA - Nueva contraseña")
+    @url  = URL
+    mail(to: @user.email, subject: "WIRA - Nuevo usuario")
+  end
+  
+  def changePassword(user)
+    @user = user
+    @url  = URL
+    mail(to: @user.email, subject: "WIRA - Contraseña modificada")
   end
   
   
