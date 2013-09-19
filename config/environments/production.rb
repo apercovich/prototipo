@@ -21,10 +21,7 @@ Prototipo::Application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
-  # config.assets.css_compressor = :sass
-
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true#false
+  # config.assets.css_compressor = :sass  
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -78,6 +75,9 @@ Prototipo::Application.configure do
   
   # -->  Con esto logramos cargar las cosas de la carpeta assets en Heroku  <--
   
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  config.assets.compile = true #false
+  
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true
+  config.serve_static_assets = true #false
 end
