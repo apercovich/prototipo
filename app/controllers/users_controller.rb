@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       # Inicio sesion automaticamente
       sign_in(@user)
       
-      Mailsender.newUser(@user).deliver()
+      #Mailsender.newUser(@user).deliver()
       
       flash[:success] = "Sesión iniciada correctamente!!!"
       redirect_to @user

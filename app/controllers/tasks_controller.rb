@@ -18,8 +18,7 @@ class TasksController < ApplicationController
       flash[:success] = "Tarea ingresada correctamente!!!"
       redirect_to tasks_path
     else
-      flash[:success] = "Error al crear tarea"
-      redirect_to tasks_path
+      render "new"
     end
   end
 
