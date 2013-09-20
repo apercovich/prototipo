@@ -3,19 +3,19 @@
 	
 	<table>
   	<tr>
-  		<td class="form-control">Fecha</td>
+  		<td class="form-control">Fecha:</td>
   		<td><%= @task.date %></td>
   	</tr>
   	<tr>
-  		<td class="form-control">Hora de inicio</td>
-  		<td><%= @task.time_start %></td>
+  		<td class="form-control">Hora de inicio:</td>
+  		<td><%= @task.time_start.to_formatted_s(:time) %></td>
   	</tr>
   	<tr>
-  		<td class="form-control">Hora de fin</td>
-  		<td><%= @task.time_end %></td></td>
+  		<td class="form-control">Hora de fin:</td>
+  		<td><%= @task.time_end.to_formatted_s(:time) %></td></td>
   	</tr>
   	<tr>
-  		<td class="form-control">Descripcion</td>
+  		<td class="form-control">Descripción:</td>
   		<td><%= @task.description %></td></td>
   	</tr>
   </table>

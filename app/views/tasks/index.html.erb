@@ -16,8 +16,8 @@
   	<tr>
   		<td><%= tarea.id %></td>
   		<td><%= tarea.date %></td>
-  		<td><%= tarea.time_start %></td>
-  		<td><%= tarea.time_end %></td>
+  		<td><%= tarea.time_start.to_formatted_s(:time) %></td>
+  		<td><%= tarea.time_end.to_formatted_s(:time) %></td>
   		<td><%= tarea.description %></td>
       <td><%= link_to "Ver", task_path(tarea) %></td>
   		<td><%= link_to "Modificar", edit_task_path(tarea) %></td>
