@@ -1,33 +1,31 @@
-<div id="contenido">
-	<div id="titulo">
-		Usuarios registrados
-	</div>
 	
-	<h2>Crear nuevo</h2>
-	<%= link_to "Nuevo usuario", new_user_path %>
+	<h2 class="centrado">Usuarios del sistema</h2>
 	
-	<h2>Usuarios creados</h2>
-	<table class="table table-bordered table-hover table-condensed">
-	  <tr>
-	    <th class="etiqueta">Nombre</th>
-	    <th class="etiqueta">Email</th>
-	    <th colspan="3" class="etiqueta centrado">Acciones</th>
-	  </tr>
-	 
-	  <% @users.each do |user| %>
-	    <tr>
-	      <td><%= user.name %></td>
-	      <td><%= user.email %></td>
-	      <td><%= link_to "Ver", user_path(user) %></td>
-	      <td><%= link_to "Modificar", edit_user_path(user) %></td>
-	      <td><%= link_to "Eliminar", user_path(user), method: :delete, data: { confirm: '¿Seguro que desea eliminar el usuario?' } %></td>
-	    </tr>
-	  <% end %>
-	</table>
-	
+	<div class="centrado" align="center">
+		<table class="table table-bordered table-hover table-condensed">
+		  <tr>
+		    <th class="etiqueta">Nombre</th>
+		    <th class="etiqueta">Email</th>
+		    <th colspan="3" class="etiqueta centrado">Acciones</th>
+		  </tr>
+		 
+		  <% @users.each do |user| %>
+		    <tr>
+		      <td><%= user.name %></td>
+		      <td><%= user.email %></td>
+		      <td><%= link_to "Ver", user_path(user) %></td>
+		      <td><%= link_to "Modificar", edit_user_path(user) %></td>
+		      <td><%= link_to "Eliminar", user_path(user), method: :delete, data: { confirm: '¿Seguro que desea eliminar el usuario?' } %></td>
+		    </tr>
+		  <% end %>
+		</table>
+
+		<%= link_to "Volver al inicio", main_path  %>
+
+	</div>	
+
 	<hr />
 	
-	<%= link_to "Volver al inicio", main_path %>
 	
-</div>
+	
 

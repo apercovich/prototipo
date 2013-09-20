@@ -2,14 +2,19 @@
 		<div id="menu" >
 			<ul class="nav nav-pills nav-stacked span2">
 				
-				
-				<% if can? :update, Task %>
+				<!-- MENU ADMINISTRADOR -->
+				<% if can? :update, Task and params[:controller] == 'tasks' %>
 					<li><%= link_to "Crear tarea", new_task_path %></li>
 				<% end %>
-				
-				<% if can? :read_stats, Log %>
+
+				<% if can? :read_stats, Log and params[:controller] == 'statistics' %>
 					<li class=""><%= link_to "Ver estadísticas", '#' %></li>
 				<% end %>
+
+				<% if can? :manage, User and params[:controller] == 'users' %>
+					<li class=""><%= link_to "Crear Usuario", new_user_path %></li>
+				<% end %>
+
 			
 			</ul>
 			<!-- 	<li class="">Administración de cuenta</li>
