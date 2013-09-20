@@ -1,7 +1,6 @@
 	<% if signed_in? %>
-		<div id="menu">
-			<ul>
-				<li class="tituloMenu">Registro de tareas</li>
+		<div id="menu" >
+			<ul class="nav nav-pills nav-stacked span2">
 				
 				
 				<% if can? :update, Task %>
@@ -9,12 +8,12 @@
 				<% end %>
 				
 				<% if can? :read_stats, Log %>
-					<li class="implem"><%= link_to "Ver estadísticas", '#' %></li>
+					<li class=""><%= link_to "Ver estadísticas", '#' %></li>
 				<% end %>
+			
 			</ul>
-			<ul>
-				<li class="tituloMenu">Administración de cuenta</li>
-				<li class="implem"><%= link_to "Cambiar contraseña", '#' %></li>
+			<!-- 	<li class="">Administración de cuenta</li>
+				<li class=""><%= link_to "Cambiar contraseña", '#' %></li>
 			</ul>
 			
 			<% if can? :update, User %>
@@ -23,7 +22,7 @@
 					<li class="implem"><%= link_to "Listar usuarios", '#' %></li>
 					<li class="implem"><%= link_to "Modificar usuario", '#' %></li>
 				</ul>
-			<% end %>
+			<% end %> -->
 			
 			<br />
 			

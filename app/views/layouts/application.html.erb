@@ -16,7 +16,7 @@
 
 
 
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default cabezal" role="navigation">
 	  <!-- Brand and toggle get grouped for better mobile display -->
 	  <div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -30,8 +30,8 @@
 	  <!-- Collect the nav links, forms, and other content for toggling -->
 	  <div class="collapse navbar-collapse navbar-ex1-collapse">
 	    <ul class="nav navbar-nav navbar-left">
-	      <li class="active"><a href="#">Inicio</a></li>
-	      <li class=""><%= link_to "Tareas", tasks_path %></li>
+	      <li class="<%= 'active' if params[:controller] == 'pages' %>"><%= link_to "Inicio", main_path %></li>
+	      <li class="<%= 'active' if params[:controller] == 'tasks' %>"><%= link_to "Tareas", tasks_path %></li>
 	      <li><a href="#">Usuarios</a></li>
 	    </ul>
 
