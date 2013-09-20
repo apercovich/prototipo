@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding//app/assets/stylesheets/application.css.erb=UTF-8
+encoding//app/views/layouts/application.html.erb=UTF-8
 encoding//app/views/users/_form.html.erb=UTF-8
 encoding//app/views/users/show.html.erb=UTF-8
 encoding//config/routes.rb=UTF-8
