@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   def require_login
     if ! signed_in?
       flash[:error] = "No estas logueado. Debes estar registrado para acceder"
-      redirect_to main_url
+      redirect_to main_path
     else
       @usuario = User.find(current_user.id)
     end
